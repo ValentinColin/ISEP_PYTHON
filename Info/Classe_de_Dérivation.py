@@ -1,6 +1,6 @@
 class Diff:
     """Classe mère pour le calcul de dérivée"""
-    def __init__(self,f,10**(-6)):
+    def __init__(self,f,h=10**(-6)):
         self.f = f
         self.h = float(h)
 
