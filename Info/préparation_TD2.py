@@ -1,55 +1,55 @@
 """
 ###############################################################################
 #
-#                    TD2: quaternions, otonions, sédénions
+#                    TD2: quaternions, octonions, sédénions
 #
 #    Créateur(s) : Valentin COLIN
 #
-#    Version : 2019/2020 (1.0)
+#    Version : 2019
 #
 ###############################################################################
 #
 #                                  CLASSE(S)
 #
 #    1.    Ha:  .................................................... ligne  112
-#    1.1   ------> __init__  ....................................... ligne  116
-#    1.2   ------> tupleh  ......................................... ligne  123
-#    1.3   ------> __repr__  ....................................... ligne  128
-#    1.4   ------> __add__  ........................................ ligne  139
-#    1.5   ------> __sub__  ........................................ ligne  145
-#    1.6   ------> __eq__  ......................................... ligne  151
-#    1.7   ------> __neq__  ........................................ ligne  155
-#    1.8   ------> __neg__  ........................................ ligne  159
-#    1.9   ------> conjh  .......................................... ligne  164
-#    1.10  ------> __mul__  ........................................ ligne  169
-#    1.11  ------> __pow__  ........................................ ligne  177
-#    1.12  ------> __rmul__  ....................................... ligne  188
-#    1.13  ------> __abs__  ........................................ ligne  193
-#    1.14  ------> invh  ........................................... ligne  197
-#    1.15  ------> __truediv__  .................................... ligne  201
-#    1.16  ------> carreh  ......................................... ligne  205
-#    1.17  ------> rot  ............................................ ligne  209
+#    1.1   ------> __init__  ....................................... ligne  117
+#    1.2   ------> tupleh  ......................................... ligne  125
+#    1.3   ------> __repr__  ....................................... ligne  130
+#    1.4   ------> __add__  ........................................ ligne  141
+#    1.5   ------> __sub__  ........................................ ligne  147
+#    1.6   ------> __eq__  ......................................... ligne  153
+#    1.7   ------> __neq__  ........................................ ligne  157
+#    1.8   ------> __neg__  ........................................ ligne  161
+#    1.9   ------> conjh  .......................................... ligne  166
+#    1.10  ------> __mul__  ........................................ ligne  171
+#    1.11  ------> __pow__  ........................................ ligne  179
+#    1.12  ------> __rmul__  ....................................... ligne  187
+#    1.13  ------> __abs__  ........................................ ligne  192
+#    1.14  ------> invh  ........................................... ligne  196
+#    1.15  ------> __truediv__  .................................... ligne  200
+#    1.16  ------> carreh  ......................................... ligne  204
+#    1.17  ------> rot  ............................................ ligne  208
 #
-#    2.    Oc(Ha):  ................................................ ligne  220
+#    2.    Oc(Ha):  ................................................ ligne  219
 #    2.1   ------> __init__  ....................................... ligne  224
-#    2.2   ------> tupleoc  ........................................ ligne  231
-#    2.3   ------> __repr__  ....................................... ligne  236
-#    2.4   ------> __add__  ........................................ ligne  247
-#    2.5   ------> __sub__  ........................................ ligne  255
-#    2.6   ------> __eq__  ......................................... ligne  263
-#    2.7   ------> __neq__  ........................................ ligne  267
-#    2.8   ------> __neg__  ........................................ ligne  271
-#    2.9   ------> conjoc  ......................................... ligne  277
-#    2.10  ------> __mul__  ........................................ ligne  283
-#    2.11  ------> __pow__  ........................................ ligne  291
-#    2.12  ------> __rmul__  ....................................... ligne  303
-#    2.13  ------> __abs__  ........................................ ligne  308
-#    2.14  ------> invoc  .......................................... ligne  312
-#    2.15  ------> __truediv__  .................................... ligne  316
-#    2.16  ------> carreoc  ........................................ ligne  320
+#    2.2   ------> tupleoc  ........................................ ligne  232
+#    2.3   ------> __repr__  ....................................... ligne  237
+#    2.4   ------> __add__  ........................................ ligne  248
+#    2.5   ------> __sub__  ........................................ ligne  256
+#    2.6   ------> __eq__  ......................................... ligne  264
+#    2.7   ------> __neq__  ........................................ ligne  268
+#    2.8   ------> __neg__  ........................................ ligne  272
+#    2.9   ------> conjoc  ......................................... ligne  278
+#    2.10  ------> __mul__  ........................................ ligne  284
+#    2.11  ------> __pow__  ........................................ ligne  292
+#    2.12  ------> __rmul__  ....................................... ligne  301
+#    2.13  ------> __abs__  ........................................ ligne  306
+#    2.14  ------> invoc  .......................................... ligne  310
+#    2.15  ------> __truediv__  .................................... ligne  314
+#    2.16  ------> carreoc  ........................................ ligne  318
 #
-#    3.    Se(Oc):  ................................................ ligne  325
-#    3.1   ------> __init__  ....................................... ligne  329
+#    3.    Se(Oc):  ................................................ ligne  323
+#    3.1   ------> __init__  ....................................... ligne  328
 #    3.2   ------> tuplese  ........................................ ligne  336
 #    3.3   ------> __repr__  ....................................... ligne  341
 #    3.4   ------> __add__  ........................................ ligne  352
@@ -60,47 +60,47 @@
 #    3.9   ------> conjse  ......................................... ligne  382
 #    3.10  ------> __mul__  ........................................ ligne  388
 #    3.11  ------> __pow__  ........................................ ligne  396
-#    3.12  ------> __rmul__  ....................................... ligne  409
-#    3.13  ------> __abs__  ........................................ ligne  414
-#    3.14  ------> invse  .......................................... ligne  418
-#    3.15  ------> __truediv__  .................................... ligne  422
-#    3.16  ------> carrese  ........................................ ligne  426
+#    3.12  ------> __rmul__  ....................................... ligne  406
+#    3.13  ------> __abs__  ........................................ ligne  411
+#    3.14  ------> invse  .......................................... ligne  415
+#    3.15  ------> __truediv__  .................................... ligne  419
+#    3.16  ------> carrese  ........................................ ligne  423
 #
-#    4.    Trigi(Se):  ............................................. ligne  431
-#    4.1   ------> __init__  ....................................... ligne  435
-#    4.2   ------> tupletrigi  ..................................... ligne  442
-#    4.3   ------> __repr__  ....................................... ligne  447
-#    4.4   ------> __add__  ........................................ ligne  458
-#    4.5   ------> __sub__  ........................................ ligne  466
-#    4.6   ------> __eq__  ......................................... ligne  474
-#    4.7   ------> __neq__  ........................................ ligne  478
-#    4.8   ------> __neg__  ........................................ ligne  482
-#    4.9   ------> conjtrigi  ...................................... ligne  488
-#    4.10  ------> __mul__  ........................................ ligne  494
-#    4.11  ------> __pow__  ........................................ ligne  502
-#    4.12  ------> __rmul__  ....................................... ligne  515
-#    4.13  ------> __abs__  ........................................ ligne  520
-#    4.14  ------> invtrigi  ....................................... ligne  524
-#    4.15  ------> __truediv__  .................................... ligne  528
-#    4.16  ------> carretrigi  ..................................... ligne  532
+#    4.    Trigi(Se):  ............................................. ligne  428
+#    4.1   ------> __init__  ....................................... ligne  433
+#    4.2   ------> tupletrigi  ..................................... ligne  441
+#    4.3   ------> __repr__  ....................................... ligne  446
+#    4.4   ------> __add__  ........................................ ligne  457
+#    4.5   ------> __sub__  ........................................ ligne  465
+#    4.6   ------> __eq__  ......................................... ligne  473
+#    4.7   ------> __neq__  ........................................ ligne  477
+#    4.8   ------> __neg__  ........................................ ligne  481
+#    4.9   ------> conjtrigi  ...................................... ligne  487
+#    4.10  ------> __mul__  ........................................ ligne  493
+#    4.11  ------> __pow__  ........................................ ligne  501
+#    4.12  ------> __rmul__  ....................................... ligne  511
+#    4.13  ------> __abs__  ........................................ ligne  516
+#    4.14  ------> invtrigi  ....................................... ligne  520
+#    4.15  ------> __truediv__  .................................... ligne  524
+#    4.16  ------> carretrigi  ..................................... ligne  528
 #
-#    5.    Sexa(Trigi):  ........................................... ligne  537
-#    5.1   ------> __init__  ....................................... ligne  541
-#    5.2   ------> tuplesexa  ...................................... ligne  548
-#    5.3   ------> __repr__  ....................................... ligne  553
-#    5.4   ------> __add__  ........................................ ligne  564
-#    5.5   ------> __sub__  ........................................ ligne  572
-#    5.6   ------> __eq__  ......................................... ligne  580
-#    5.7   ------> __neq__  ........................................ ligne  584
-#    5.8   ------> __neg__  ........................................ ligne  588
-#    5.9   ------> conjsexa  ....................................... ligne  594
-#    5.10  ------> __mul__  ........................................ ligne  600
-#    5.11  ------> __pow__  ........................................ ligne  608
-#    5.12  ------> __rmul__  ....................................... ligne  621
-#    5.13  ------> __abs__  ........................................ ligne  626
-#    5.14  ------> invsexa  ........................................ ligne  630
-#    5.15  ------> __truediv__  .................................... ligne  634
-#    5.16  ------> carresexa  ...................................... ligne  638
+#    5.    Sexa(Trigi):  ........................................... ligne  533
+#    5.1   ------> __init__  ....................................... ligne  538
+#    5.2   ------> tuplesexa  ...................................... ligne  546
+#    5.3   ------> __repr__  ....................................... ligne  551
+#    5.4   ------> __add__  ........................................ ligne  562
+#    5.5   ------> __sub__  ........................................ ligne  570
+#    5.6   ------> __eq__  ......................................... ligne  578
+#    5.7   ------> __neq__  ........................................ ligne  582
+#    5.8   ------> __neg__  ........................................ ligne  586
+#    5.9   ------> conjsexa  ....................................... ligne  592
+#    5.10  ------> __mul__  ........................................ ligne  598
+#    5.11  ------> __pow__  ........................................ ligne  606
+#    5.12  ------> __rmul__  ....................................... ligne  616
+#    5.13  ------> __abs__  ........................................ ligne  621
+#    5.14  ------> invsexa  ........................................ ligne  625
+#    5.15  ------> __truediv__  .................................... ligne  629
+#    5.16  ------> carresexa  ...................................... ligne  633
 #
 ###############################################################################
 # --coding:utf-8--
@@ -110,10 +110,12 @@ from math import sqrt,sin,cos,pi,radians
 
 
 class Ha:
+    """Classe des Quaternions."""
 
     dim = 4 # dimmension de l'espace
 
     def __init__(self,*coef):
+        """Constructeur d'instances."""
         if len(coef) != Ha.dim:
             raise TypeError("{} coordonnates needed".format(Ha.dim))
         self.coef = list(coef)
@@ -129,7 +131,7 @@ class Ha:
         """renvoie une représentation de self en string."""
         sign = {}
         letter = ["","i","j","k"]
-        for i in range(1,4):
+        for i in range(1,Ha.dim):
             sign[i] = ("+" if self.coef[i] >= 0 else "")
         text = str(self.coef[0])
         for k in range(1,Ha.dim):
@@ -176,14 +178,11 @@ class Ha:
 
     def __pow__(self,p):
         """renvoie la puissance p-ième de self (self**p)."""
-        if p > 1:
-            A, B = self.A, self.B
-            P, Q = self.A, self.B
-            for _ in range(p-1):
-                P,Q = A*P - B*Q.conjugate(), A*Q + B*P.conjugate()
-            return Ha(P.real,P.imag,Q.real,Q.imag)
-        else:
-            return self
+        A, B = self.A, self.B
+        P, Q = self.A, self.B
+        for _ in range(p-1):
+            P,Q = A*P - B*Q.conjugate(), A*Q + B*P.conjugate()
+        return Ha(P.real,P.imag,Q.real,Q.imag)
 
     def __rmul__(self,r):
         """renvoie le produit de self par un scalaire (r*self)."""
@@ -207,8 +206,8 @@ class Ha:
         return sum([self.coef[i]**2 for i in range(Ha.dim)])
 
     def rot(self,other,alpha):
-        """other -> vecteur 3D représenter par un quaternion (0,x,y,z)
-        alpha -> angle de rotation de self autour de other."""
+        """other (Ha) -> vecteur 3D représenter par un quaternion (0,x,y,z)
+        alpha (radians) -> angle de rotation de self autour de other."""
         x, y, z = [other.coef[i] for i in range(1,Ha.dim)]
         q = Ha(cos(alpha/2), \
             sin(alpha/2)/abs(other) * x, \
@@ -218,10 +217,12 @@ class Ha:
 
 
 class Oc(Ha):
+    """Classe des Octonions."""
 
     dim = 8 # dimmension de l'espace
 
     def __init__(self,*coef):
+        """Constructeur d'instances."""
         if len(coef) != Oc.dim:
             raise TypeError("{} coordonnates needed".format(Oc.dim))
         self.coef = list(coef)
@@ -290,15 +291,12 @@ class Oc(Ha):
 
     def __pow__(self,p):
         """renvoie la puissance p-ième de self (self**p)."""
-        if p > 1:
-            A, B = self.A, self.B
-            P, Q = self.A, self.B
-            for _ in range(p-1):
-                P,Q = A*P - B*Q.conjh(), A*Q + B*P.conjh()
-            coef = [P.coef[i] for i in range(Ha.dim)]+[Q.coef[k] for k in range(Ha.dim)]
-            return Oc(*coef)
-        else:
-            return self
+        A, B = self.A, self.B
+        P, Q = self.A, self.B
+        for _ in range(p-1):
+            P,Q = A*P - B*Q.conjh(), A*Q + B*P.conjh()
+        coef = [P.coef[i] for i in range(Ha.dim)]+[Q.coef[k] for k in range(Ha.dim)]
+        return Oc(*coef)
 
     def __rmul__(self,r):
         """renvoie le produit de self par un scalaire (r*self)."""
@@ -323,10 +321,12 @@ class Oc(Ha):
 
 
 class Se(Oc):
+    """Classe des Sédénions"""
 
     dim = 16 # dimmension de l'espace
 
     def __init__(self,*coef):
+        """Constructeur d'instances."""
         if len(coef) != Se.dim:
             raise TypeError("{} coordonnates needed".format(Se.dim))
         self.coef = list(coef)
@@ -395,16 +395,13 @@ class Se(Oc):
 
     def __pow__(self,p):
         """renvoie la puissance p-ième de self (self**p)."""
-        if p > 1:
-            A, B = self.A, self.B
-            P, Q = self.A, self.B
-            for _ in range(p-1):
-                P,Q = A*P - B*Q.conjoc(), A*Q + B*P.conjoc()
-            coef1 = [P.coef[i] for i in range(Oc.dim)]
-            coef2 = [Q.coef[k] for k in range(Oc.dim)]
-            return Se(*coef1,*coef2)
-        else:
-            return self
+        A, B = self.A, self.B
+        P, Q = self.A, self.B
+        for _ in range(p-1):
+            P,Q = A*P - B*Q.conjoc(), A*Q + B*P.conjoc()
+        coef1 = [P.coef[i] for i in range(Oc.dim)]
+        coef2 = [Q.coef[k] for k in range(Oc.dim)]
+        return Se(*coef1,*coef2)
 
     def __rmul__(self,r):
         """renvoie le produit de self par un scalaire (r*self)."""
@@ -429,10 +426,12 @@ class Se(Oc):
 
 
 class Trigi(Se):
+    """Classe des Trigintaduonions."""
 
     dim = 32 # dimmension de l'espace
 
     def __init__(self,*coef):
+        """Constructeur d'instances."""
         if len(coef) != Trigi.dim:
             raise TypeError("{} coordonnates needed".format(Trigi.dim))
         self.coef = list(coef)
@@ -501,16 +500,13 @@ class Trigi(Se):
 
     def __pow__(self,p):
         """renvoie la puissance p-ième de self (self**p)."""
-        if p > 1:
-            A, B = self.A, self.B
-            P, Q = self.A, self.B
-            for _ in range(p-1):
-                P,Q = A*P - B*Q.conjse(), A*Q + B*P.conjse()
-            coef1 = [P.coef[i] for i in range(Se.dim)]
-            coef2 = [Q.coef[k] for k in range(Se.dim)]
-            return Trigi(*coef1,*coef2)
-        else:
-            return self
+        A, B = self.A, self.B
+        P, Q = self.A, self.B
+        for _ in range(p-1):
+            P,Q = A*P - B*Q.conjse(), A*Q + B*P.conjse()
+        coef1 = [P.coef[i] for i in range(Se.dim)]
+        coef2 = [Q.coef[k] for k in range(Se.dim)]
+        return Trigi(*coef1,*coef2)
 
     def __rmul__(self,r):
         """renvoie le produit de self par un scalaire (r*self)."""
@@ -535,10 +531,12 @@ class Trigi(Se):
 
 
 class Sexa(Trigi):
+    """Classe des Sexagintaquaternions."""
 
     dim = 64 # dimmension de l'espace
 
     def __init__(self,*coef):
+        """Constructeur d'instances."""
         if len(coef) != Sexa.dim:
             raise TypeError("{} coordonnates needed".format(Sexa.dim))
         self.coef = list(coef)
@@ -607,16 +605,13 @@ class Sexa(Trigi):
 
     def __pow__(self,p):
         """renvoie la puissance p-ième de self (self**p)."""
-        if p > 1:
-            A, B = self.A, self.B
-            P, Q = self.A, self.B
-            for _ in range(p-1):
-                P,Q = A*P - B*Q.conjtrigi(), A*Q + B*P.conjtrigi()
-            coef1 = [P.coef[i] for i in range(Sexa.dim)]
-            coef2 = [Q.coef[k] for k in range(Sexa.dim)]
-            return Sexa(*coef1,*coef2)
-        else:
-            return self
+        A, B = self.A, self.B
+        P, Q = self.A, self.B
+        for _ in range(p-1):
+            P,Q = A*P - B*Q.conjtrigi(), A*Q + B*P.conjtrigi()
+        coef1 = [P.coef[i] for i in range(Sexa.dim)]
+        coef2 = [Q.coef[k] for k in range(Sexa.dim)]
+        return Sexa(*coef1,*coef2)
 
     def __rmul__(self,r):
         """renvoie le produit de self par un scalaire (r*self)."""
@@ -681,7 +676,7 @@ if __name__=="__main__":
     # print("Racine carré de 393:",sqrt(393)) # ok
 
 
-    ################################ SEDENIONS ################################
+    ################################ SÉDÉNIONS ################################
     sede = Se(6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5)
     # print(sede.tuplese()) # ok
     # print(sede) # ok
@@ -717,7 +712,7 @@ if __name__=="__main__":
     # print("\nModule de t3t:      ",abs(t3t))
     # print("Racine carré de 788:",sqrt(788))
 
-    ########################## sexagintaquaternions ###########################
+    ########################## Sexagintaquaternions ###########################
     sexa = Sexa(6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5,6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5,\
     4,4, 4, 4, 3,3, 3,-3,0,1,0,0,0,0,0,0,4,4, 4, 4, 3,3, 3,-3,0,1,0,0,0,0,0,0)
     # print(sexa.tuplesexa()) # ok
@@ -742,7 +737,7 @@ if __name__=="__main__":
     # print("Racine carré de 793:",sqrt(793))
 
     ############################# LOI DES CARRÉS ##############################
-    ### testons la loi des carrés
+    ### testons la loi des Modules/carrés
     # quaternions
     h1 = Ha(7,4,2,9)
     h2 = Ha(1,7,4,5)
