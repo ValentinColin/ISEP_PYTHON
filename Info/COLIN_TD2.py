@@ -106,8 +106,8 @@
 # --coding:utf-8--
 """
 from math import sqrt,sin,cos,pi,radians
-
-
+# Construction des (2**n)-nions avec la méthode de Hamilton, Carley et Dickson
+# attention cette méthode n'est pas optimisé pour le calcul
 
 class Ha:
     """Classe des Quaternions."""
@@ -172,8 +172,8 @@ class Ha:
         """Renvoie le produit de self et other (self*other)."""
         A, B = self.A, self.B
         C, D = other.A, other.B
-        E = A*C - D.conjugate()*B # complex
-        F = D*A + B*C.conjugate() # complex
+        E = A*C - D.conjugate()*B # conjugate() est une méthode de la class des complex
+        F = D*A + B*C.conjugate() # est un complexe
         return Ha(E.real,E.imag,F.real,F.imag)
 
     def __pow__(self,p):
@@ -209,10 +209,10 @@ class Ha:
         """other (Ha) -> vecteur 3D représenter par un quaternion (0,x,y,z)
         alpha (radians) -> angle de rotation de self autour de other."""
         x, y, z = [other.coef[i] for i in range(1,Ha.dim)]
-        q = Ha(cos(alpha/2), \
-            sin(alpha/2)/abs(other) * x, \
-            sin(alpha/2)/abs(other) * y, \
-            sin(alpha/2)/abs(other) * z)
+        q = Ha( cos(alpha/2), \
+                sin(alpha/2)/abs(other) * x, \
+                sin(alpha/2)/abs(other) * y, \
+                sin(alpha/2)/abs(other) * z)
         return q * self * q.invh()
 
 
@@ -640,19 +640,19 @@ if __name__=="__main__":
     i = Ha(0,1,0,0)
     j = Ha(0,0,1,0)
     # print("On vérifie la non commutativité:\nEst-ce que ij=k et ji=-k ?")
-    # print("    i*j=",i*j,"\n    j*i=",j*i) # ok
+    # print("    i*j =",i*j,"\n    j*i =",j*i) # ok
 
     q1 = Ha(4, 1,0, 6)
     q2 = Ha(0, 6,1, 8)
     q3 = Ha(1,-1,7,-6)
-    # print("On vérifie l'associativité:\nEst-ce que (q1.q2).q3 = q1.(q2.q3) ?")
+    # print("On vérifie l'associativité:\nEst-ce que (q1.q2).q3 == q1.(q2.q3) ?")
     # print((q1*q2)*q3 == q1*(q2*q3))         # ok
     # print("\nModule de q3:      ",abs(q3))  # ok
-    # print("Racine carré de 87:",sqrt(87))   # ok
+    # print("Racine carré de 87:",sqrt(87))   # vérification
 
     qv     = Ha(0,3,7,8)
     axeRot = Ha(0,1,1,1)
-    angle = 120
+    angle = 120 # en degré
     qvr = qv.rot(axeRot,radians(angle))
     # print("Rotation de qv={} par rapport à axeRot={} d'un angle de {} degrées".format(qv.tupleh(),axeRot.tupleh(),angle))
     # print("image:",qvr) # ok
@@ -672,8 +672,8 @@ if __name__=="__main__":
     o3 = Oc(1,9,-6,-3,-5,9,12, 4)
     # print("Vérifions l'associativité (o1.o2).o3 != o1.(o2.o3):")
     # print((o1*o2)*o3 != o1*(o2*o3)) # ok
-    # print("\nModule de o3:       ",abs(o3))
-    # print("Racine carré de 393:",sqrt(393)) # ok
+    # print("\nModule de o3:       ",abs(o3)) # ok
+    # print("Racine carré de 393:",sqrt(393)) # vérification
 
 
     ################################ SÉDÉNIONS ################################
@@ -691,8 +691,8 @@ if __name__=="__main__":
     s3t = Se(1,9,-6,-3,-5,9,12, 4,0,0,0,0,1,0,0,0)
     # print("Vérifions l'associativité (s1.s2).s3 != s1.(s2.s3):")
     # print((s1w*s2q)*s3t != s1w*(s2q*s3t)) # ok
-    # print("\nModule de s3t:      ",abs(s3t))
-    # print("Racine carré de 394:",sqrt(394)) # ok
+    # print("\nModule de s3t:      ",abs(s3t)) # ok
+    # print("Racine carré de 394:",sqrt(394)) # vérification
 
     ############################ Trigintaduonions #############################
     trigi = Trigi(6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5,6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5)
@@ -710,7 +710,7 @@ if __name__=="__main__":
     # print("Vérifions l'associativité (t1w.t2q).t3t != t1w.(t2q.t3t):")
     # print((t1w*t2q)*t3t != t1w*(t2q*t3t))
     # print("\nModule de t3t:      ",abs(t3t))
-    # print("Racine carré de 788:",sqrt(788))
+    # print("Racine carré de 788:",sqrt(788)) # vérification
 
     ########################## Sexagintaquaternions ###########################
     sexa = Sexa(6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5,6,7,-8,-5,0,3,5,-4,7,7,4,3,9,1,0,5,\
@@ -734,7 +734,7 @@ if __name__=="__main__":
     # print("Vérifions l'associativité (sx1.sx2).sx3 != sx1.(sx2.sx3):")
     # print((sx1*sx2)*sx3 != sx1*(sx2*sx3)) # ok
     # print("\nModule de sx3:      ",abs(sx3)) # ok
-    # print("Racine carré de 793:",sqrt(793))
+    # print("Racine carré de 793:",sqrt(793)) # vérification
 
     ############################# LOI DES CARRÉS ##############################
     ### testons la loi des Modules/carrés
@@ -755,6 +755,7 @@ if __name__=="__main__":
     s2l = Se(4,4, 4, 4, 3,3, 3,-3,0,1,0,0,0,0,0,0)
     s3l = s1l*s2l
     # print(s3l.carrese() == s1l.carrese() * s2l.carrese()) # égalité incorrect
+
     ######
     # La loi des modules/carrés est FAUSSE pour les Sédénions
     ######
