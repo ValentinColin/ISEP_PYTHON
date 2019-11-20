@@ -156,12 +156,12 @@ def enigme():
             a,b,c,d = nombres[0],nombres[1],nombres[2],nombres[3]
             f,g,h = operations[0],operations[1],operations[2] # pas besoins de regarder la dernière opérations puisqu'elle ne sera pas utilisé
             f,g,h = dict_opera[f],dict_opera[g],dict_opera[h] # se sont maintenant des fonctions
-            print(h(g(f(a,b),c),d),"((({0} {4} {1}) {5} {2}) {6} {3})".format(a,b,c,d,operations[0],operations[1],operations[2]))
+            # print(h(g(f(a,b),c),d),"((({0} {4} {1}) {5} {2}) {6} {3})".format(a,b,c,d,operations[0],operations[1],operations[2]))
             if h(g(f(a,b),c),d) == res:
                 solutions.append("((({0} {4} {1}) {5} {2}) {6} {3})".format(a,b,c,d,operations[0],operations[1],operations[2]))
     return ("Il y a {} Solution(s)".format(len(solutions)),solutions)
 
-# print(enigme()) # On obtient aucune solution
+# print(enigme()) # ('Il y a 1 Solution(s)', ['(((3 / 2) + 5) * 4)'])
 
 ################################# Exercice 8 #################################
 ###  MOCHE (mais fonctionne)
