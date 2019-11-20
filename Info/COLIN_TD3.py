@@ -106,7 +106,12 @@ def I_rectangle(f,n):
     aire = 0
     for k in range(n):
         c = k + 0.5
-        aire += 1/n * f(c)
+        aire += 1/n * f(c/n)
+    return aire
+    # return sum([1/n * f((k+0.5)/n) for k in range(n)]) # version courte
+
+print("simpson   : ",simpson(f,10))
+print("rectangle : ",I_rectangle(f,10))
 
 # Question 3:
 X = list(range(1,21))
