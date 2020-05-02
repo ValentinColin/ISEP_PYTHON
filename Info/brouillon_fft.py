@@ -3,6 +3,7 @@ from scipy.fftpack import fft
 import matplotlib.pyplot as plt
 
 
+
 porte  = lambda x: 1 if -0.5<x<0.5 else 0
 
 plt.figure(figsize=(10,7))
